@@ -1,6 +1,11 @@
 import HtmlClock from "./classes/HtmlClock.js";
 import TimeHelper from "./helper/TimeHelper.js";
 
+Date.prototype.addHours = function (h) {
+    this.setTime(this.getTime() + (h * 60 * 60 * 1000));
+    return this;
+}
+
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
         navigator.serviceWorker
@@ -12,23 +17,31 @@ if ("serviceWorker" in navigator) {
 
 const timeHelper = new TimeHelper();
 
-const clock = new HtmlClock("Berlin", true);
+const berlin = new HtmlClock("Berlin", true);
 
 
 const utcOffsetForOhio = timeHelper.getOffsetForPlaceInTime("ohio");
-const clock2 = new HtmlClock("Ohio", false, utcOffsetForOhio);
+const ohio = new HtmlClock("Ohio", false, utcOffsetForOhio);
 
 const utcOffsetForLondon = timeHelper.getOffsetForPlaceInTime("london");
-const clock3 = new HtmlClock("London", false, utcOffsetForLondon);
+const london = new HtmlClock("London", false, utcOffsetForLondon);
 
-let clocks = [clock, clock2, clock3];
+let clocks = [berlin, ohio, london];
 
 
 document.querySelectorAll('.clock-actions input').forEach((el) => {
     if (el.getAttribute("name") === "hours") {
         // update clock - how's the time in X hours?
-        clocks.forEach((clock) => {
-
-        });
+        el.addEventListener('change', (ev) => {
+            let hours = el.value;
+            console.log("changing clocks:", hours)
+            clocks.forEach((clock) => {
+                console.log(clock)
+                clock.clearHoursOnTop();
+                clock.forwardHours(hours);
+            });
+        })
     }
 });
+
+

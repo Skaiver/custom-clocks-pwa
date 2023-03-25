@@ -1,10 +1,10 @@
 {
-  "name": "Dev'Coffee",
-  "short_name": "DevCoffee",
+  "name": "Custom Clocks",
+  "short_name": "Clocks",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#fdfdfd",
-  "theme_color": "#db4938",
+  "theme_color": "#e95849",
   "orientation": "portrait-primary",
   "icons": [
     {

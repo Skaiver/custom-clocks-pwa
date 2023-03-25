@@ -41,6 +41,13 @@ export default class HtmlClock {
         } else {
             date = new Date();
         }
+
+        console.log(this.hoursOnTop)
+
+        if(this.hoursOnTop) {
+            date = date.addHours(this.hoursOnTop);
+        }
+
         let h = date.getHours(); // 0 - 23
         let m = date.getMinutes(); // 0 - 59
         let s = date.getSeconds(); // 0 - 59
@@ -78,6 +85,11 @@ export default class HtmlClock {
         this.domClock.textContent = time;
     }
 
+    forwardHours(hours){
+        this.hoursOnTop = hours;
+        console.log("bep")
+    }
+
     get domClock() {
         return this._domElement.querySelector('.clock');
     }
@@ -88,5 +100,9 @@ export default class HtmlClock {
 
     addClockToDom() {
         document.querySelector('.clocks.container .row').append(this._domElement);
+    }
+
+    clearHoursOnTop() {
+        this.hoursOnTop = undefined;
     }
 }

@@ -46,11 +46,7 @@
     font-style: normal;
     font-weight: 400;
     src: url('/assets/fonts/orbitron/orbitron-v25-latin-regular.eot'); /* IE9 Compat Modes */
-    src: url('/assets/fonts/orbitron/orbitron-v25-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('/assets/fonts/orbitron/orbitron-v25-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-    url('/assets/fonts/orbitron/orbitron-v25-latin-regular.woff') format('woff'), /* Modern Browsers */
-    url('/assets/fonts/orbitron/orbitron-v25-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('/assets/fonts/orbitron/orbitron-v25-latin-regular.svg#Orbitron') format('svg'); /* Legacy iOS */
+    src: url('/assets/fonts/orbitron/orbitron-v25-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/assets/fonts/orbitron/orbitron-v25-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */ url('/assets/fonts/orbitron/orbitron-v25-latin-regular.woff') format('woff'), /* Modern Browsers */ url('/assets/fonts/orbitron/orbitron-v25-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('/assets/fonts/orbitron/orbitron-v25-latin-regular.svg#Orbitron') format('svg'); /* Legacy iOS */
 }
 
 /* Fonts END */
@@ -59,6 +55,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    background-color: #131516;
 }
 
 body {
@@ -72,11 +72,13 @@ main {
     margin: auto;
     padding: 0.5rem;
     text-align: center;
+    background-color: #131516;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+    justify-content: center;
     align-items: center;
 }
 
@@ -142,7 +144,11 @@ h1 {
 /* HtmlClock */
 .clock-wrapper {
     position: relative;
-    height: 150px;
+    margin-bottom: 2rem;
+}
+
+.clock-wrapper h3 {
+    color: white;
 }
 
 .clock {
@@ -151,7 +157,7 @@ h1 {
     /*left: 50%;*/
     /*transform: translateX(-50%) translateY(-50%);*/
     color: #17D4FE;
-    font-size: 60px;
+    font-size: 50px;
     font-family: Orbitron, "Nunito", sans-serif;
     letter-spacing: 7px;
 }
@@ -159,4 +165,26 @@ h1 {
 /* Clock Actions */
 .clock-actions {
     margin-top: 1rem;
+}
+
+.clock-actions h2 {
+    color: white;
+}
+
+/* Number Input */
+input[name='hours'] {
+    padding: 7px 5px;
+    width: 90px;
+    font-size: 30px;
+    background-color: #131516;
+    color: white;
+    border: solid 1px #17D4FE;
+    border-radius: 8px;
+}
+
+input[name='hours']::-webkit-outer-spin-button {
+}
+
+input[name='hours']::-webkit-inner-spin-button {
+
 }
