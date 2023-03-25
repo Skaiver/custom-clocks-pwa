@@ -3,7 +3,7 @@
   "short_name": "Clocks",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#fdfdfd",
+  "background_color": "#131516",
   "theme_color": "#e95849",
   "orientation": "portrait-primary",
   "icons": [
