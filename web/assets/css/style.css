@@ -139,13 +139,24 @@ h1 {
     border-radius: 20px;
 }
 
+/* HtmlClock */
+.clock-wrapper {
+    position: relative;
+    height: 150px;
+}
+
 .clock {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translateX(-50%) translateY(-50%);*/
     color: #17D4FE;
     font-size: 60px;
-    font-family: Orbitron;
+    font-family: Orbitron, "Nunito", sans-serif;
     letter-spacing: 7px;
+}
+
+/* Clock Actions */
+.clock-actions {
+    margin-top: 1rem;
 }

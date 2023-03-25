@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap-grid.css"/>
     <title>Custom Clocks</title>
     <link rel="manifest" href="manifest.json"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icon/apple-touch-icon.png">
@@ -23,13 +24,20 @@
         <h1>Custom Clocks</h1>
         <ul>
             <li data-app-action="home">Home</li>
-            <li data-app-action="new-entry">Neuer Eintrag</li>
-            <li data-app-action="beep">Blog</li>
+            <li data-app-action="new-entry">Import Clock</li>
+            <li data-app-action="beep">What is this?</li>
         </ul>
     </nav>
-    <div class="container">
-        <div id="clock" class="clock"></div>
+
+    <div class="container clocks">
+        <div class="row"></div>
     </div>
+
+    <div class="container clock-actions">
+        <h2>How late is it in X hours?</h2>
+        <input type="number" name="hours">
+    </div>
+
 </main>
 <script type="module" src="assets/js/app.js" defer></script>
 </body>

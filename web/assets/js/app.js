@@ -1,5 +1,5 @@
-import StorageHelper from "./helper/StorageHelper.js";
-import Clock from "./classes/Clock.js";
+import HtmlClock from "./classes/HtmlClock.js";
+import TimeHelper from "./helper/TimeHelper.js";
 
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
@@ -10,18 +10,25 @@ if ("serviceWorker" in navigator) {
     })
 }
 
-const domElement = document.querySelector('#clock');
-const clock = new Clock(domElement, "Germany", true);
+const timeHelper = new TimeHelper();
 
-setInterval(() => {
-    clock.refresh();
-}, 1000);
+const clock = new HtmlClock("Berlin", true);
 
 
-// document.querySelector("nav li[data-app-action='home']").addEventListener("click", showCoffees)
-// document.querySelector("nav li[data-app-action='new-entry']").addEventListener("click", showEntryForm)
+const utcOffsetForOhio = timeHelper.getOffsetForPlaceInTime("ohio");
+const clock2 = new HtmlClock("Ohio", false, utcOffsetForOhio);
 
-// const storageHelper = new StorageHelper();
-// storageHelper.getReports();
-// storageHelper.saveReport({date: "2023-03-20", "content": "a"});
-// storageHelper.getReports();
+const utcOffsetForLondon = timeHelper.getOffsetForPlaceInTime("london");
+const clock3 = new HtmlClock("London", false, utcOffsetForLondon);
+
+let clocks = [clock, clock2, clock3];
+
+
+document.querySelectorAll('.clock-actions input').forEach((el) => {
+    if (el.getAttribute("name") === "hours") {
+        // update clock - how's the time in X hours?
+        clocks.forEach((clock) => {
+
+        });
+    }
+});

@@ -3,7 +3,12 @@ const assets = [
     "/",
     "/index.html",
     "/assets/css/style.css",
+    "/assets/css/bootstrap/bootstrap-grid.css",
+    //
     "/assets/js/app.js",
+    "/assets/classes/HtmlClock.js",
+    "/assets/js/helper/StorageHelper.js",
+    "/assets/js/helper/TimeHelper.js",
     // fonts
     "/assets/fonts/nunito/nunito-v25-latin-300.eot",
     "/assets/fonts/nunito/nunito-v25-latin-300.svg",
@@ -24,7 +29,14 @@ const assets = [
     "/assets/fonts/nunito/nunito-v25-latin-regular.svg",
     "/assets/fonts/nunito/nunito-v25-latin-regular.ttf",
     "/assets/fonts/nunito/nunito-v25-latin-regular.woff",
-    "/assets/fonts/nunito/nunito-v25-latin-regular.woff2"
+    "/assets/fonts/nunito/nunito-v25-latin-regular.woff2",
+    //
+    "/assets/fonts/orbitron-v25-latin-regular.eot",
+    "/assets/fonts/orbitron-v25-latin-regular.svg",
+    "/assets/fonts/orbitron-v25-latin-regular.ttf",
+    "/assets/fonts/orbitron-v25-latin-regular.woff",
+    "/assets/fonts/orbitron-v25-latin-regular.woff2"
+
 ]
 
 self.addEventListener("install", installEvent => {
